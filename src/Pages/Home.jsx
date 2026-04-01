@@ -140,20 +140,20 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Eki Zulfar Rachman — Frontend Web Developer</title>
-        <meta name="description" content="Website resmi Eki Zulfar Rachman, Front-End Web Developer. Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan." />
+        <title>Dermawan Suprihatin — Passionate IT Professional Driving Innovation and Excellence | Leveraging Technology to Shape a Smarter Future</title>
+        <meta name="description" content="Website resmi Dermawan Suprihatin. Passionate IT Professional Driving Innovation and Excellence | Leveraging Technology to Shape a Smarter Future." />
      <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://dermawansuprihatin.vercel.app" />
-        <meta property="og:title" content="Eki Zulfar Rachman — Frontend Web Developer" />
-     <meta property="og:description" content="Website resmi dan portofolio Eki Zulfar Rachman, Front-End Web Developer." />
+        <meta property="og:title" content="Dermawan Suprihatin — Passionate IT Professional Driving Innovation and Excellence | Leveraging Technology to Shape a Smarter Future" />
+     <meta property="og:description" content="Website resmi dan portofolio Dermawan Suprihatin. Passionate IT Professional Driving Innovation and Excellence | Leveraging Technology to Shape a Smarter Future." />
         <meta property="og:url" content="https://dermawansuprihatin.vercel.app" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Eki Zulfar Rachman",
-            "jobTitle": "Frontend Developer",
+            "name": "Dermawan Suprihatin",
+            "jobTitle": "Passionate IT Professional Driving Innovation and Excellence | Leveraging Technology to Shape a Smarter Future",
             "url": "https://dermawansuprihatin.vercel.app",
             "sameAs": [
               "https://github.com/dermawans",
