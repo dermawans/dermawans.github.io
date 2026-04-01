@@ -8,7 +8,7 @@ const Footer = () => {
         <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
           © {currentYear}{" "}
           <a href="https://dermawansuprihatin.vercel.app" className="hover:underline">
-            EkiZR™
+            Dermawan Suprihatin™
           </a>
           . All Rights Reserved.
         </span>

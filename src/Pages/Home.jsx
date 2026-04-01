@@ -79,9 +79,9 @@ const PAUSE_DURATION = 2000;
 const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
 const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR", label: "GitHub Profile" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/", label: "LinkedIn Profile" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id", label: "Instagram Profile" }
+  { icon: Github, link: "https://github.com/dermawans", label: "GitHub Profile" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/dermawansuprihatin/", label: "LinkedIn Profile" },
+  { icon: Instagram, link: "https://www.instagram.com/dermawan_suprihatin/", label: "Instagram Profile" }
 ];
 
 const Home = () => {
@@ -156,9 +156,9 @@ const Home = () => {
             "jobTitle": "Frontend Developer",
             "url": "https://dermawansuprihatin.vercel.app",
             "sameAs": [
-              "https://github.com/EkiZR",
-              "https://www.linkedin.com/in/ekizr/",
-              "https://www.instagram.com/ekizr_/"
+              "https://github.com/dermawans",
+              "https://www.linkedin.com/in/dermawansuprihatin/",
+              "https://www.instagram.com/dermawan_suprihatin/"
             ]
           }
         `}</script>
