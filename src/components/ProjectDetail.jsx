@@ -127,17 +127,17 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  
+
     const fetchProject = async () => {
       const { data, error } = await supabase
         .from("projects")
         .select("*");
-  
+
       if (error) {
         console.error(error);
         return;
       }
-  
+
       // mapping snake_case → camelCase (biar cocok sama UI kamu)
       const mapped = data.map((p) => ({
         id: p.id,
@@ -146,19 +146,20 @@ const ProjectDetails = () => {
         Img: p.img,
         TechStack: p.tech_stack || [],
         Features: p.features || [],
+        Category: p.category || "Web App",
         Link: p.link,
         Github: p.github,
       }));
-  
+
       const selectedProject = mapped.find(
         (p) => toSlug(p.Title) === slug
       );
-  
+
       if (selectedProject) {
         setProject(selectedProject);
       }
     };
-  
+
     fetchProject();
   }, [slug]);
 
@@ -248,6 +249,11 @@ const ProjectDetails = () => {
             <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
               <div className="space-y-6 md:space-y-10 animate-slideInLeft">
                 <div className="space-y-4 md:space-y-6">
+                  {project.Category && (
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium uppercase tracking-wider">
+                      {project.Category}
+                    </div>
+                  )}
                   <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
                     {project.Title}
                   </h1>

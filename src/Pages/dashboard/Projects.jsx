@@ -14,7 +14,7 @@ import {
 
 const Card = ({ children, className = "" }) => (
   <div className={`relative group ${className}`}>
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
     <div className="relative bg-white/5 backdrop-blur-xl border border-white/12 rounded-2xl h-full">
       {children}
     </div>
@@ -46,7 +46,7 @@ const InputField = ({
 
 const SkeletonCard = () => (
   <div className="relative">
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] rounded-2xl blur opacity-10" />
     <div className="relative bg-white/5 border border-white/12 rounded-2xl p-4 flex flex-col gap-3">
       <div className="w-full aspect-[16/8] bg-white/5 animate-pulse rounded-xl" />
       <div className="h-4 bg-white/5 animate-pulse rounded-lg w-2/3" />
@@ -103,11 +103,18 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
             {project.tech_stack.map((t) => (
               <span
                 key={t}
-                className="px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-xs"
+                className="px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-[10px]"
               >
                 {t}
               </span>
             ))}
+          </div>
+        )}
+        {project.category && (
+          <div className="flex items-center gap-1.5 mb-3">
+             <span className="px-2 py-0.5 rounded bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 text-[#0ea5e9] text-[10px] font-medium uppercase tracking-wider">
+               {project.category}
+             </span>
           </div>
         )}
         <div className="mt-auto flex items-center justify-between gap-2 pt-2 border-t border-white/8">
@@ -163,7 +170,7 @@ const Modal = ({ title, onClose, children }) => (
       className="relative z-10 w-full max-w-2xl flex flex-col"
       style={{ maxHeight: "calc(100vh - 24px)" }}
     >
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-20 pointer-events-none" />
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] rounded-2xl blur opacity-20 pointer-events-none" />
       <div className="relative bg-[#0a0a1a] border border-white/12 rounded-2xl flex flex-col overflow-hidden">
         {/* Fixed header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/8 shrink-0">
@@ -201,6 +208,7 @@ const ProjectForm = ({
       : initial?.features || "",
     Link: initial?.link || "",
     Github: initial?.github || "",
+    Category: initial?.category || "",
   });
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(initial?.img || null);
@@ -223,12 +231,21 @@ const ProjectForm = ({
       className="p-5 sm:p-6 space-y-4"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-1">
           <InputField
             label="Project Title"
             value={form.Title}
             onChange={set("Title")}
             placeholder="e.g. My Portfolio Website"
+            required
+          />
+        </div>
+        <div className="sm:col-span-1">
+          <InputField
+            label="Category"
+            value={form.Category}
+            onChange={set("Category")}
+            placeholder="e.g. Web App, FinTech"
             required
           />
         </div>
@@ -314,7 +331,7 @@ const ProjectForm = ({
           Cancel
         </button>
         <button type="submit" disabled={uploading} className="relative group/s">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-60 blur group-hover/s:opacity-100 transition duration-300" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0284c7] to-[#0891b2] rounded-xl opacity-60 blur group-hover/s:opacity-100 transition duration-300" />
           <div className="relative flex items-center gap-2 px-5 py-2 bg-[#030014] rounded-xl border border-white/10">
             {uploading ? (
               <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
@@ -374,6 +391,7 @@ export default function Projects() {
         features: form.Features.split(",").map(s => s.trim()).filter(Boolean),
         link: form.Link,
         github: form.Github,
+        category: form.Category,
       }
     ]);
     setShowCreate(false);
@@ -399,6 +417,7 @@ export default function Projects() {
           .filter(Boolean),
         link: form.Link,
         github: form.Github,
+        category: form.Category,
       })
       .eq("id", editProject.id);
     setEditProject(null);
@@ -418,7 +437,7 @@ export default function Projects() {
       <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-50" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] rounded-xl blur opacity-50" />
             <div className="relative w-9 h-9 bg-[#030014] rounded-xl border border-white/15 flex items-center justify-center">
               <FolderGit2 className="w-4 h-4 text-indigo-400" />
             </div>
@@ -437,7 +456,7 @@ export default function Projects() {
           onClick={() => setShowCreate(true)}
           className="relative group shrink-0"
         >
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur group-hover:opacity-80 transition duration-300" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0284c7] to-[#0891b2] rounded-xl opacity-50 blur group-hover:opacity-80 transition duration-300" />
           <div className="relative flex items-center gap-2 px-4 py-2.5 bg-[#030014] rounded-xl border border-white/10">
             <Plus className="w-4 h-4 text-indigo-400" />
             <span className="text-sm text-gray-200">New Project</span>

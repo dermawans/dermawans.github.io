@@ -103,7 +103,7 @@ const SocialLinks = () => {
   useEffect(() => {
     AOS.init({
       offset: 10,
-     
+
     });
   }, []);
 
@@ -111,9 +111,9 @@ const SocialLinks = () => {
     <div className="w-full bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
       <h3
         className="text-xl font-semibold text-white mb-6 flex items-center gap-2"
-        data-aos="fade-down" 
+        data-aos="fade-down"
       >
-        <span className="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
+        <span className="inline-block w-8 h-1 bg-purple-500 rounded-full"></span>
         Connect With Me
       </h3>
 
@@ -127,7 +127,7 @@ const SocialLinks = () => {
                      bg-white/5 border border-white/10 overflow-hidden
                      hover:border-white/20 transition-all duration-500"
           data-aos="fade-up"
-          data-aos-delay="100" 
+          data-aos-delay="100"
         >
           {/* Hover Gradient Background */}
           <div
@@ -190,8 +190,8 @@ const SocialLinks = () => {
               className="group relative flex items-center gap-3 p-4 rounded-xl 
                                bg-white/5 border border-white/10 overflow-hidden
                                hover:border-white/20 transition-all duration-500"
-              data-aos="fade-up" 
-              data-aos-delay={200 + index * 100} 
+              data-aos="fade-up"
+              data-aos-delay={200 + index * 100}
             >
               <div
                 className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
@@ -249,7 +249,7 @@ const SocialLinks = () => {
               className="group relative flex items-center gap-3 p-4 rounded-xl 
                                bg-white/5 border border-white/10 overflow-hidden
                                hover:border-white/20 transition-all duration-500"
-              data-aos="fade-up" 
+              data-aos="fade-up"
               data-aos-delay={400 + index * 100}
             >
               <div
@@ -296,7 +296,7 @@ const SocialLinks = () => {
             </a>
           ))}
         </div>
-  
+
       </div>
     </div>
   );
